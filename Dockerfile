@@ -42,5 +42,6 @@ RUN . $HOME/venv/bin/activate && python $HOME/tools/patcher.py $HOME/test_projec
 # -------------
 
 USER root
+RUN sed -i -e 's/\r$//' /home/ubuntu/config/*sh && chmod +x /home/ubuntu/config/*sh
 ENTRYPOINT /home/ubuntu/config/run.sh
 
